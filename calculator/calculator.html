@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculator</title>
+        <style>
+            .caculator-container{
+                display: block;
+                width: 500px;
+                height: 550px;
+                background-color: #78d748a3;
+                border-radius: 10px;
+                box-shadow: 0px 0px 30px rgba(68, 64, 64, 0.565);
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+
+            }
+            .brandname{
+               margin-left: 15px;
+               padding-top: 15px;
+               display: block;
+               font-size: 30px;
+            }
+            .calscreen{
+                font-size: 50px;
+                width: 450px;
+                display: block;
+                color:rgb(4, 3, 3);
+                background-color: antiquewhite;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
+        .buttons-container{
+            display: block;
+            flex-direction: row;
+            justify-content: space-around;
+            margin: 10px;
+
+        }
+        .cal-btn{
+            background-color: rgba(108, 210, 203, 0.582);
+            height: 60px;
+            width: 70px;
+            margin: 1px;
+            font-size: 30px;
+            border-radius: 7px;
+            border: 2px solid rgba(150, 152, 136, 0.96);
+            font-weight: bold;
+            cursor: pointer;
+            margin: 22px;
+            box-shadow: 0px 0px 30px rgba(30, 30, 28, 0.565);
+            padding: 5px;
+        }
+        .cal-btn:hover{
+            box-shadow: 0 10px 20px red;
+            transition: 0.4s;
+        }
+        .differ{
+            width: 100px;
+            background-color:rgb(238, 226, 7)
+        }
+        .differ1{
+            background-color: rgb(134, 16, 214);
+        }
+        </style>
+        <script>
+            function handle(num)
+            {
+                const input=document.getElementById("cal-screen");
+                input.value=input.value+num;
+            }
+            function calculate()
+            {
+                const input=document.getElementById("cal-screen");
+                const ans=eval(input.value);
+                input.value=ans;
+
+            }
+            function clearsc()
+            {
+                const input=document.getElementById("cal-screen");
+                input.value=" ";
+
+
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <div class="caculator-container">
+            <span class="brandname">CASIO</span>
+            <input type="text" class="calscreen" id="cal-screen">
+            <div clas="buttons-container">
+                <button class="cal-btn" onclick="handle(7)">7</button>
+                <button class="cal-btn" onclick="handle(8)">8</button>
+                <button class="cal-btn" onclick="handle(9)">9</button>
+                <button class="cal-btn differ" onclick="clearsc()">A/C</button>
+            </div>
+            <div clas="buttons-container">
+                <button class="cal-btn" onclick="handle(4)">4</button>
+                <button class="cal-btn" onclick="handle(5)">5</button>
+                <button class="cal-btn" onclick="handle(6)">6</button>
+                <button class="cal-btn differ" onclick="handle('+')">+</button>
+            </div>
+            <div clas="buttons-container">
+                <button class="cal-btn" onclick="handle(1)">1</button>
+                <button class="cal-btn" onclick="handle(2)">2</button>
+                <button class="cal-btn" onclick="handle(3)">3</button>
+                <button class="cal-btn differ" onclick="handle('-')">-</button>
+            </div>
+            <div clas="buttons-container">
+                <button class="cal-btn differ1" onclick="handle('*')">*</button>
+                <button class="cal-btn differ1" onclick="handle('/')">/</button>
+                <button class="cal-btn differ1" onclick="handle(0)">0</button>
+                <button class="cal-btn differ" onclick="calculate()">=</button>
+            </div>
+
+
+        </div>
+    </body>
+</html>
